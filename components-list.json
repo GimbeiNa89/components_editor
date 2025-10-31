@@ -1,0 +1,5 @@
+[
+    {"type": "esp32", "name": "Espressif - Esp32"},
+    {"type": "lora_board", "name": "Archimede - Lora board"},
+    {"type": "custom", "name": "Archimede - Custom board"}
+]

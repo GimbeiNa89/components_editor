@@ -1,0 +1,8 @@
+{
+    "name": "generic_component",
+    "size": [200, 32],
+    "pins": [
+        ["PIN1", 8, 8],
+        ["PIN2", 8, 24]
+    ]
+}

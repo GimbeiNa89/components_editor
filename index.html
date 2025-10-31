@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Editor</title>
+        <style>
+            @import"https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap";* {
+                box-sizing: border-box;
+                font-family: DM Sans
+            }
+
+            html, body{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            *{
+                font-family: "DM Sans";
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.75);
+            }
+        </style>
+        <link rel="stylesheet" href="./res/css/Editor.css">
+        <script src="./res/utils/pan_view.js"></script>
+        <script type="module">
+            import { Editor } from "./res/Editor.js";
+
+            const editor = new Editor("myEditor");
+
+            async function initEditor() {
+                let diagram;
+                try {
+                    const response = await fetch("./diagram.json");
+                    if (!response.ok) { throw new Error(`Failed to load diagram.json: ${response.statusText}`);}
+                    diagram = await response.json(); 
+                } catch (error) {
+                    console.error("Error loading or parsing diagram.json:", error);
+                    return; 
+                }
+                editor.loadDiagram(diagram);
+            }
+
+            window.save = () =>{
+                editor.downloadDiagram();
+            }
+
+            initEditor();
+        </script>
+    </head>
+    <body>
+        <div class="Editor" id="myEditor"></div>
+        <button onclick="save()">Save</button>
+    </body>
+</html>

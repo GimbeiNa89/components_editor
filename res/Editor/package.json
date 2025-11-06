@@ -1,0 +1,13 @@
+{
+  "name": "Archimede - Editor",
+  "author": "Damiano Caccamo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Libreria per la generazione di un editor di configurazione di componenti / shield",
+  "main": "Editor.js",
+  "directories": {},
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5"
+  }
+}

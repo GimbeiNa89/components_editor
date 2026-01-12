@@ -1,1 +1,11 @@
 ./res/scss
+node_modules/
+.DS_Store
+.env
+.vscode
+.idea
+*.log
+*.tmp
+/build
+/dist
+/.cache
